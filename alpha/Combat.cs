@@ -2,7 +2,7 @@ using System.Collections;
 
 namespace alpha;
 
-class Combat
+public class Combat
 {
     Player PlayerCombat;
     Monster MonsterCombat;

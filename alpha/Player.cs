@@ -1,6 +1,6 @@
 namespace alpha;
 
-class Player
+public class Player
 {
     public string Name;
     public int CurrentLocation;
