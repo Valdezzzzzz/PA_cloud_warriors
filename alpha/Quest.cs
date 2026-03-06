@@ -13,16 +13,14 @@ public class Quest
         Name = NameValue;
     }
 
-    public void QuestCompleted(int currentWeaponID)
+    public void QuestCompleted(Inventory inventory, int currentWeaponID, string typeReward)
     {
         // Display quest completion message and reward
         Console.WriteLine("Congratulations! You have completed the quest: " + Name);
-        Console.WriteLine("You have been rewarded a weapon upgrade: " + World.WeaponByID(currentWeaponID).Name);
-    }
-
-    public void AddWeaponReward(int weaponID)
-    {
-        // Implementation for adding weapon reward
-        // Weapon reward logic can be implemented here: +1 on current weapon id.
+        if (typeReward == "WeaponUpgrade")
+        {
+            Console.WriteLine("You have been rewarded a weapon upgrade: " + World.WeaponByID(currentWeaponID).Name);
+            inventory.UpgradeWeapon(currentWeaponID);
+        }
     }
 }
